@@ -1,13 +1,22 @@
 package com.chriswork.Model;
 
+import javax.persistence.*;
 
+@Entity
 public class Student {
     
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @Column
     private String sFName;
+    @Column
     private String sLName;
+    @Column
     private String sAddress;
+    @Column
     private String sEmail;
+    @Column
     private String sPassword;
 
     

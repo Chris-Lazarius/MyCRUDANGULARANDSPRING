@@ -1,10 +1,18 @@
 package com.chriswork.Model;
 
+import javax.persistence.*;
+
+@Entity
 public class Administrator {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long admin_id;
+    @Column
     private String admin_name;
+    @Column
     private String admin_contact;
+    @Column
     private String admin_password;
     
     public long getAdmin_id() {
