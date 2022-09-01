@@ -62,5 +62,9 @@ public class ApiControllers {
         student_repo.delete(deleteStudent);
         return "has been deleted..." + id;
     }
+//===========================Admin=============================
 
+//===========================Registor=============================
+
+//===========================end=============================
 }
