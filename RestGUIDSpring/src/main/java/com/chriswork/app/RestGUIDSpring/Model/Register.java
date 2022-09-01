@@ -1,4 +1,4 @@
-package com.chriswork.Model;
+package com.chriswork.app.RestGUIDSpring.Model;
 
 import javax.persistence.*;
 
