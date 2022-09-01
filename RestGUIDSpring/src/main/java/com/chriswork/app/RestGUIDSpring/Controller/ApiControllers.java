@@ -2,7 +2,9 @@ package com.chriswork.app.RestGUIDSpring.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -38,6 +40,18 @@ public class ApiControllers {
     {
         student_repo.save(student);
         return "Saved...";
+    }
+
+    @PutMapping(value = "update/{id}")
+    public String updateStudent(@PathVariable long id, @RequestBody Student student) {
+        Student updateStudent = student_repo.findById(id).get();
+        updateStudent.setsAddress(student.getsAddress());
+        updateStudent.setsEmail(student.getsEmail());
+        updateStudent.setsFName(student.getsFName());
+        updateStudent.setsLName(student.getsLName());
+        updateStudent.setsPassword(student.getsPassword());
+        student_repo.save(updateStudent);
+        return "updated...";
     }
 
 }
