@@ -15,6 +15,7 @@ public class RestApiApplication {
     public String getPage2()
     {
         return "Hello Mr Chris";
+        
     }
 
 }
