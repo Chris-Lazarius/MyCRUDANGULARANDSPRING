@@ -1,6 +1,7 @@
 package com.chriswork.app.RestGUIDSpring.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -52,6 +53,14 @@ public class ApiControllers {
         updateStudent.setsPassword(student.getsPassword());
         student_repo.save(updateStudent);
         return "updated...";
+    }
+
+    @DeleteMapping(value = "deletestudent/{id}")
+    public String deleteStudent(@PathVariable long id)
+    {
+        Student deleteStudent = student_repo.findById(id).get();
+        student_repo.delete(deleteStudent);
+        return "has been deleted..." + id;
     }
 
 }
