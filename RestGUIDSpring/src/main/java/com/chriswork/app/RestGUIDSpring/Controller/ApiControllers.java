@@ -42,7 +42,7 @@ public class ApiControllers {
         return "Saved...";
     }
 
-    @PutMapping(value = "update/{id}")
+    @PutMapping(value = "updatestudent/{id}")
     public String updateStudent(@PathVariable long id, @RequestBody Student student) {
         Student updateStudent = student_repo.findById(id).get();
         updateStudent.setsAddress(student.getsAddress());
