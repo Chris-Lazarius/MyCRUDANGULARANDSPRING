@@ -31,11 +31,13 @@ public class ApiControllers {
     }
 
     //This method will save/store new student within the student table, we mde use of the POST function.
-    @PostMapping(value = "/save")
+    // We are passing the student entity as a parameter.
+
+    @PostMapping(value = "/savestudent")
     public String saveStudent(@RequestBody Student student)
     {
-        return "";
+        student_repo.save(student);
+        return "Saved...";
     }
-
 
 }
